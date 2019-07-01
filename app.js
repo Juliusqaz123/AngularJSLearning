@@ -1,12 +1,5 @@
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
-myApp.controller('mainController', function($scope) {
-
+myApp.controller('mainController', function($scope, $log, $filter, $resource) {
+    console.log($resource);
 });
-
-var searchPeople = function searchPeople(firstName, lastName, height, age,occupation){
-    return  'Jane Doe';
-}
-
-var searchPeopleString = searchPeople.toString();
-console.log(searchPeopleString);
