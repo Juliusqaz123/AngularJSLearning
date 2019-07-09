@@ -23,12 +23,20 @@ myApp.config(function ($routeProvider) {
 
 myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
 
-    $scope.name = 'Main';
+
 
 }]);
 
 myApp.controller('secondController', ['$scope', '$log', '$routeParams', function($scope, $log, $routeParams) {
 
-    $scope.num = $routeParams.num || 1;
+
 
 }]);
+
+myApp.directive("searchResult", function() {
+    return {
+        restrict: 'AECM',
+        template: '<a href="#" class="list-group-item"><h4 class="list-group-item-heading">Doe, John</h4><p class="list-group-item-text">555Main St., New York, NY 11111</p></a>' ,
+        replace: true
+    }
+})
